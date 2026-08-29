@@ -1,6 +1,7 @@
 import Hero from "./components/Hero/Hero";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
+import Portal from "./components/Portal/Portal";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Navbar/>
     <main>
       <Hero />
+      <Portal />
     </main>
     </>
   );
