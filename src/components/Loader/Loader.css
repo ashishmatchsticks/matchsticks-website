@@ -1,0 +1,75 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.2rem;
+
+  background: #efe6df;
+
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+.loader-mark {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+
+  animation: markIn 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.loader-mark span {
+  color: #9b0103;
+}
+
+.loader-bar {
+  width: 220px;
+  height: 2px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.loader-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 100%;
+
+  background: #9b0103;
+}
+
+.loader-percent {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+
+  color: #625b57;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes markIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    letter-spacing: 0.3em;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: -0.02em;
+  }
+}
