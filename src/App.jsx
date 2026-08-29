@@ -1,4 +1,5 @@
 import Hero from "./components/Hero/Hero";
+import Intro from "./components/Intro/Intro";
 import Loader from "./components/Loader/Loader";
 import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <Portal />
       <Marquee />
+      <Intro />
     </main>
     </>
   );
