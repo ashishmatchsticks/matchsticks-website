@@ -1,3 +1,4 @@
+import Branding from "./components/Branding/Branding";
 import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
@@ -21,6 +22,7 @@ function App() {
       <Stats />
       <FeaturedWork />
       <Outdoor />
+      <Branding />
     </main>
     </>
   );
