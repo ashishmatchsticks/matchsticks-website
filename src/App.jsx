@@ -4,6 +4,7 @@ import Loader from "./components/Loader/Loader";
 import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
 import Portal from "./components/Portal/Portal";
+import Stats from "./components/Stats/Stats";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Portal />
       <Marquee />
       <Intro />
+      <Stats />
     </main>
     </>
   );

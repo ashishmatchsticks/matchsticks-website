@@ -1,0 +1,175 @@
+.stats {
+  position: relative;
+
+  padding: 7rem 0;
+
+  background: var(--text);
+
+  color: var(--white);
+}
+
+.stats-wrap {
+  width: min(88vw, 1400px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-top: 1px solid
+    rgba(239, 230, 223, 0.2);
+
+  border-bottom: 1px solid
+    rgba(239, 230, 223, 0.2);
+}
+
+.stat {
+  position: relative;
+
+  padding: 3rem 2rem;
+
+  min-height: 190px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.stat + .stat {
+  border-left: 1px solid
+    rgba(239, 230, 223, 0.2);
+}
+
+.stat-number {
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(
+    3.5rem,
+    7vw,
+    7rem
+  );
+
+  line-height: 0.9;
+
+  font-weight: 800;
+
+  letter-spacing: -0.06em;
+
+  color: var(--white);
+}
+
+.stat-number::after {
+  content: "+";
+
+  color: var(--red);
+
+  margin-left: 0.08em;
+}
+
+.stat-label {
+  margin-top: 2rem;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  color: #c9c2bd;
+}
+
+/* --------------------------------
+   Tablet
+-------------------------------- */
+
+@media (max-width: 900px) {
+  .stats {
+    padding: 5rem 0;
+  }
+
+  .stats-wrap {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .stat {
+    min-height: 160px;
+
+    padding: 2.2rem 1.5rem;
+  }
+
+  .stat:nth-child(3) {
+    border-left: 0;
+
+    border-top: 1px solid
+      rgba(239, 230, 223, 0.2);
+  }
+
+  .stat:nth-child(4) {
+    border-top: 1px solid
+      rgba(239, 230, 223, 0.2);
+  }
+
+  .stat-number {
+    font-size: clamp(
+      3rem,
+      12vw,
+      5rem
+    );
+  }
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 520px) {
+  .stats {
+    padding: 4rem 0;
+  }
+
+  .stats-wrap {
+    width: 88vw;
+
+    grid-template-columns: 1fr;
+  }
+
+  .stat,
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    min-height: 130px;
+
+    border-left: 0;
+
+    border-top: 1px solid
+      rgba(239, 230, 223, 0.2);
+  }
+
+  .stat:first-child {
+    border-top: 0;
+  }
+
+  .stat-number {
+    font-size: 4rem;
+  }
+
+  .stat-label {
+    margin-top: 1.2rem;
+
+    font-size: 0.68rem;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-number {
+    opacity: 1;
+  }
+}
