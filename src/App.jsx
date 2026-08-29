@@ -1,5 +1,6 @@
 import Hero from "./components/Hero/Hero";
 import Loader from "./components/Loader/Loader";
+import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
 import Portal from "./components/Portal/Portal";
 
@@ -11,6 +12,7 @@ function App() {
     <main>
       <Hero />
       <Portal />
+      <Marquee />
     </main>
     </>
   );
