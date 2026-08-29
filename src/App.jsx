@@ -7,6 +7,7 @@ import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
 import Outdoor from "./components/Outdoor/Outdoor";
 import Portal from "./components/Portal/Portal";
+import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <FeaturedWork />
       <Outdoor />
       <Branding />
+      <Services />
     </main>
     </>
   );
