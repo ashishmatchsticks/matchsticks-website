@@ -1,8 +1,10 @@
+import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
 import Loader from "./components/Loader/Loader";
 import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
+import Outdoor from "./components/Outdoor/Outdoor";
 import Portal from "./components/Portal/Portal";
 import Stats from "./components/Stats/Stats";
 
@@ -17,6 +19,8 @@ function App() {
       <Marquee />
       <Intro />
       <Stats />
+      <FeaturedWork />
+      <Outdoor />
     </main>
     </>
   );
