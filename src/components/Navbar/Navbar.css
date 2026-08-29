@@ -41,6 +41,11 @@
   text-decoration: none;
 }
 
+.navbar:not(.scrolled) .navbar-logo,
+.navbar:not(.scrolled) .navbar-links a {
+  color: var(--white);
+}
+
 .navbar-logo span {
   color: var(--red);
 }
@@ -122,6 +127,10 @@
 
   position: relative;
   z-index: 700;
+}
+
+.navbar:not(.scrolled) .hamburger span {
+  background: var(--white);
 }
 
 .hamburger span {
