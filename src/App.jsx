@@ -1,3 +1,4 @@
+import About from "./components/About/About";
 import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
 import Branding from "./components/Branding/Branding";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
@@ -35,6 +36,7 @@ function App() {
       <VideoShowcase />
       <BeforeAfter />
       <Clients />
+      <About />
     </main>
     </>
   );

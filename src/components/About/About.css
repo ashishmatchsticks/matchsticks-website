@@ -1,0 +1,168 @@
+.about-section {
+  position: relative;
+  padding: 9rem 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.about-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6vw;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 7vw;
+  align-items: center;
+}
+
+/* IMAGE */
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  filter: grayscale(100%);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+/* CONTENT */
+
+.about-content {
+  max-width: 650px;
+}
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 2rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--red);
+}
+
+.about-content h2 {
+  margin: 0 0 2.5rem;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.about-content p {
+  max-width: 560px;
+  margin: 0 0 2.5rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 0.6rem;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.about-cta span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.about-cta:hover {
+  color: var(--red);
+  border-color: var(--red);
+  gap: 1.4rem;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 6rem 0;
+  }
+
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .about-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 5rem 0;
+  }
+
+  .about-wrap {
+    padding: 0 5vw;
+    gap: 3rem;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+}
