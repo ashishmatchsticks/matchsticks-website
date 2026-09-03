@@ -15,6 +15,7 @@ import Portal from "./components/Portal/Portal";
 import Process from "./components/Process/Process";
 import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
+import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <Clients />
       <About />
       <Process />
+      <Testimonial />
     </main>
     </>
   );
