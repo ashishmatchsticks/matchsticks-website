@@ -12,6 +12,7 @@ import Marquee from "./components/Marquee/Marquee";
 import Navbar from "./components/Navbar/Navbar";
 import Outdoor from "./components/Outdoor/Outdoor";
 import Portal from "./components/Portal/Portal";
+import Process from "./components/Process/Process";
 import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
@@ -37,6 +38,7 @@ function App() {
       <BeforeAfter />
       <Clients />
       <About />
+      <Process />
     </main>
     </>
   );
