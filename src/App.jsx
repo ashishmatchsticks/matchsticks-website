@@ -1,6 +1,8 @@
 import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
 import Branding from "./components/Branding/Branding";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
+import Clients from "./components/Clients/Clients";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
@@ -17,6 +19,7 @@ function App() {
   return (
     <>
     <Loader/>
+    <CustomCursor />
     <Navbar/>
     <main>
       <Hero />
@@ -31,6 +34,7 @@ function App() {
       <CaseStudy />
       <VideoShowcase />
       <BeforeAfter />
+      <Clients />
     </main>
     </>
   );
