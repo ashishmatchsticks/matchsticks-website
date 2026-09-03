@@ -1,0 +1,207 @@
+.before-after-section {
+  padding: 8rem 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.before-after-wrap {
+  width: min(88vw, 1400px);
+  margin: 0 auto;
+}
+
+.before-after-head {
+  margin-bottom: 3rem;
+}
+
+.before-after-head h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+
+/* SLIDER */
+
+.before-after-slider {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 14 / 9;
+
+  overflow: hidden;
+
+  cursor: ew-resize;
+
+  user-select: none;
+  touch-action: none;
+
+  background: #171414;
+}
+
+
+/* BASE / BEFORE */
+
+.before-after-slider .before-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+}
+
+
+/* AFTER */
+
+.after-wrap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.after-wrap img {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* HANDLE */
+
+.before-after-handle {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background: var(--white);
+
+  pointer-events: none;
+}
+
+.before-after-handle::before,
+.before-after-handle::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  width: 44px;
+  height: 44px;
+
+  border: 2px solid var(--white);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: var(--red);
+
+  box-sizing: border-box;
+}
+
+.before-after-handle::before {
+  top: 50%;
+}
+
+.before-after-handle span {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: var(--white);
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+
+/* LABELS */
+
+.before-after-label {
+  position: absolute;
+
+  bottom: 1.2rem;
+
+  z-index: 5;
+
+  padding: 0.45rem 0.7rem;
+
+  color: var(--white);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.before-label {
+  left: 1.2rem;
+}
+
+.after-label {
+  right: 1.2rem;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .before-after-section {
+    padding: 5rem 0;
+  }
+
+  .before-after-head {
+    margin-bottom: 2rem;
+  }
+
+  .before-after-head h2 {
+    font-size: clamp(3rem, 13vw, 5rem);
+  }
+
+  .before-after-slider {
+    aspect-ratio: 4 / 3;
+  }
+
+  .before-after-handle::before,
+  .before-after-handle::after {
+    width: 38px;
+    height: 38px;
+  }
+}

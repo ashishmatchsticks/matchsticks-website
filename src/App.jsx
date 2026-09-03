@@ -1,3 +1,4 @@
+import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
 import Branding from "./components/Branding/Branding";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
@@ -29,6 +30,7 @@ function App() {
       <Services />
       <CaseStudy />
       <VideoShowcase />
+      <BeforeAfter />
     </main>
     </>
   );
