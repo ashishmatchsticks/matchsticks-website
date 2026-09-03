@@ -1,0 +1,138 @@
+.final-cta-section {
+  position: relative;
+  padding: 10rem 0;
+  background: var(--red);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.final-cta-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* HEADING */
+
+.final-cta-wrap h2 {
+  margin: 0 0 4rem;
+
+  max-width: 1200px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  text-align: center;
+  color: var(--white);
+}
+
+/* BUTTONS */
+
+.final-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.final-cta-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  min-width: 210px;
+
+  padding: 1.1rem 1.4rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.15s ease-out;
+
+  will-change: transform;
+}
+
+/* PRIMARY BUTTON */
+
+.final-cta-primary {
+  background: var(--white);
+  color: var(--red);
+}
+
+.final-cta-primary:hover {
+  background: var(--text);
+  color: var(--white);
+}
+
+/* SECONDARY BUTTON */
+
+.final-cta-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: var(--white);
+}
+
+.final-cta-secondary:hover {
+  background: var(--white);
+  color: var(--red);
+}
+
+.final-cta-actions a span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .final-cta-section {
+    padding: 7rem 0;
+  }
+
+  .final-cta-wrap h2 {
+    max-width: 900px;
+    font-size: clamp(3.5rem, 11vw, 7rem);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .final-cta-section {
+    padding: 5rem 0;
+  }
+
+  .final-cta-wrap {
+    padding: 0 5vw;
+  }
+
+  .final-cta-wrap h2 {
+    margin-bottom: 3rem;
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .final-cta-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-actions a {
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -5,6 +5,7 @@ import CaseStudy from "./components/CaseStudy/CaseStudy";
 import Clients from "./components/Clients/Clients";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
+import FinalCTA from "./components/FinalCTA/FinalCTA";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
 import Loader from "./components/Loader/Loader";
@@ -41,6 +42,7 @@ function App() {
       <About />
       <Process />
       <Testimonial />
+      <FinalCTA />
     </main>
     </>
   );
