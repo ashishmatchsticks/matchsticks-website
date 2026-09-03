@@ -1,4 +1,5 @@
 import Branding from "./components/Branding/Branding";
+import CaseStudy from "./components/CaseStudy/CaseStudy";
 import FeaturedWork from "./components/FeaturedWork/FeaturedWork";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
@@ -9,6 +10,7 @@ import Outdoor from "./components/Outdoor/Outdoor";
 import Portal from "./components/Portal/Portal";
 import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
+import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Outdoor />
       <Branding />
       <Services />
+      <CaseStudy />
+      <VideoShowcase />
     </main>
     </>
   );
