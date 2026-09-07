@@ -73,7 +73,7 @@ function Services() {
     }
 
     const items =
-      section.querySelectorAll(".service-item");
+      section.querySelectorAll(".home-services-item");
 
     const movePreview = (event) => {
       gsap.to(preview, {
@@ -85,17 +85,16 @@ function Services() {
       });
     };
 
-const enterItem = (event) => {
-  const image = event.currentTarget.dataset.image;
+    const enterItem = (event) => {
+      const image = event.currentTarget.dataset.image;
 
-  previewImage.src = image;
+      previewImage.src = image;
+      preview.classList.add("is-visible");
+    };
 
-  preview.classList.add("is-visible");
-};
-
-const leaveItem = () => {
-  preview.classList.remove("is-visible");
-};
+    const leaveItem = () => {
+      preview.classList.remove("is-visible");
+    };
 
     items.forEach((item) => {
       item.addEventListener("mouseenter", enterItem);
@@ -109,10 +108,12 @@ const leaveItem = () => {
           "mouseenter",
           enterItem
         );
+
         item.removeEventListener(
           "mousemove",
           movePreview
         );
+
         item.removeEventListener(
           "mouseleave",
           leaveItem
@@ -124,40 +125,42 @@ const leaveItem = () => {
   return (
     <section
       ref={sectionRef}
-      className="services"
+      className="home-services-section"
       id="services"
     >
-      <div className="services-wrap">
+      <div className="home-services-wrap">
 
-        <div className="services-header">
+        {/* Heading */}
+        <div className="home-services-heading">
           <h2>SERVICES</h2>
         </div>
 
-        <div className="services-list">
+        {/* Services List */}
+        <div className="home-services-list">
           {SERVICES.map((service) => (
             <div
-              className="service-item"
+              className="home-services-item"
               key={service.number}
               data-image={service.image}
             >
-              <div className="service-number">
+              <div className="home-services-number">
                 {service.number}
               </div>
 
               <h3>{service.title}</h3>
 
-              <div className="service-arrow">
+              <div className="home-services-arrow">
                 →
               </div>
             </div>
           ))}
         </div>
-
       </div>
 
+      {/* Hover Image */}
       <div
         ref={previewRef}
-        className="service-preview"
+        className="home-services-preview"
       >
         <img
           ref={previewImageRef}

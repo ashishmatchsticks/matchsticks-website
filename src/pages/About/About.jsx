@@ -1,4 +1,3 @@
-import FinalCTA from "../../components/FinalCTA/FinalCTA";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import AboutCTA from "./AboutCTA/AboutCTA";

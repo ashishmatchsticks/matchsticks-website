@@ -26,6 +26,7 @@ import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 // About page
 import About from "./pages/About/About";
 import ScrollToTop from "./components/ScrollToTop";
+import ServicesHeader from "./pages/Services/ServicesHeader/ServicesHeader";
 
 function Home() {
   return (
@@ -51,6 +52,7 @@ function Home() {
         <Process />
         <Testimonial />
         <FinalCTA />
+        <ServicesHeader />
       </main>
 
       <Footer />
