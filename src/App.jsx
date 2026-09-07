@@ -28,6 +28,7 @@ import About from "./pages/About/About";
 import ScrollToTop from "./components/ScrollToTop";
 import ServicesHeader from "./pages/Services/ServicesHeader/ServicesHeader";
 import ServicesStats from "./pages/Services/ServicesStats/ServicesStats";
+import ServiceDetails from "./pages/Services/ServiceDetails/ServiceDetails";
 
 function Home() {
   return (
@@ -55,6 +56,7 @@ function Home() {
         <FinalCTA />
         <ServicesHeader />
         <ServicesStats />
+        <ServiceDetails />
       </main>
 
       <Footer />
