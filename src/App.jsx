@@ -61,6 +61,7 @@ function Home() {
         <WorksStats />
         <WorksGrid />
         <WorksCaseStudy />
+        <Testimonial />
       </main>
 
       <Footer />
