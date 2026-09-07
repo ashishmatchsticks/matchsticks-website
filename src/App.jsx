@@ -27,11 +27,7 @@ import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 // Pages
 import About from "./pages/About/About";
 import ServicesPage from "./pages/Services/Services";
-import WorksHeader from "./pages/Works/WorksHeader/WorksHeader";
-import WorksStats from "./pages/Works/WorksStats/WorksStats";
-import WorksGrid from "./pages/Works/WorksGrid/WorksGrid";
-import WorksCaseStudy from "./pages/Works/WorksCaseStudy/WorksCaseStudy";
-import WorksCTA from "./pages/Works/WorksCTA/WorksCTA";
+import WorkPage from "./pages/Works/Works";
 
 
 function Home() {
@@ -58,12 +54,6 @@ function Home() {
         <Process />
         <Testimonial />
         <FinalCTA />
-        <WorksHeader />
-        <WorksStats />
-        <WorksGrid />
-        <WorksCaseStudy />
-        <Testimonial />
-        <WorksCTA />
       </main>
 
       <Footer />
@@ -88,6 +78,9 @@ function App() {
 
         {/* Services page */}
         <Route path="/services" element={<ServicesPage />} />
+
+        {/* Services page */}
+        <Route path="/works" element={<WorkPage />} />
 
       </Routes>
 

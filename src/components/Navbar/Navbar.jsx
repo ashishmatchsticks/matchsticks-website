@@ -31,7 +31,7 @@ function Navbar() {
 
       {/* Desktop navigation */}
       <div className="navbar-links">
-        <Link to="/#work" onClick={closeMenu}>
+        <Link to="/works" onClick={closeMenu}>
           Work
         </Link>
 
@@ -41,10 +41,6 @@ function Navbar() {
 
         <Link to="/services" onClick={closeMenu}>
           Services
-        </Link>
-
-        <Link to="/#clients" onClick={closeMenu}>
-          Clients
         </Link>
 
         <Link to="/#contact" onClick={closeMenu}>
@@ -70,7 +66,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <Link to="/#work" onClick={closeMenu}>
+        <Link to="/works" onClick={closeMenu}>
           Work
         </Link>
 
@@ -80,10 +76,6 @@ function Navbar() {
 
         <Link to="/services" onClick={closeMenu}>
           Services
-        </Link>
-
-        <Link to="/#clients" onClick={closeMenu}>
-          Clients
         </Link>
 
         <Link to="/#contact" onClick={closeMenu}>
