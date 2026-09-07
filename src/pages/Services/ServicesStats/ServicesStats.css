@@ -1,0 +1,142 @@
+/* ========================================
+   SERVICES STATS
+======================================== */
+
+.services-stats {
+  position: relative;
+
+  background: var(--text);
+  color: var(--white);
+}
+
+.services-stats-wrap {
+  width: min(88vw, 1400px);
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 2.6rem 0;
+}
+
+
+/* ========================================
+   STAT
+======================================== */
+
+.services-stat {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.3rem;
+
+  padding: 0.5rem 2.2rem;
+
+  border-right: 1px solid
+    rgba(255, 255, 255, 0.14);
+}
+
+.services-stat:first-child {
+  padding-left: 0;
+}
+
+.services-stat:last-child {
+  border-right: none;
+}
+
+
+/* ========================================
+   NUMBER
+======================================== */
+
+.services-stats-number {
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 800;
+
+  font-size: 2.2rem;
+
+  line-height: 1;
+
+  color: var(--red);
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.services-stats-label {
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.8rem;
+
+  color: #c9c2bd;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .services-stats-wrap {
+    width: min(88vw, 1400px);
+
+    padding: 2rem 0;
+
+    gap: 0;
+  }
+
+  .services-stat {
+    padding: 0.6rem 1.2rem 1rem;
+
+    border-right: none;
+  }
+
+  .services-stat:first-child {
+    padding-left: 0;
+  }
+
+  .services-stats-number {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .services-stats-wrap {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 1.5rem;
+
+    padding: 1.8rem 0;
+  }
+
+  .services-stat {
+    padding: 0.4rem 0;
+  }
+
+  .services-stat:nth-child(odd) {
+    padding-right: 1rem;
+  }
+
+  .services-stat:nth-child(even) {
+    padding-left: 1rem;
+  }
+
+  .services-stats-number {
+    font-size: 1.8rem;
+  }
+
+  .services-stats-label {
+    font-size: 0.72rem;
+  }
+}
