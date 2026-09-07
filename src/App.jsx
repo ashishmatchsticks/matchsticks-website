@@ -28,10 +28,7 @@ import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 import About from "./pages/About/About";
 import ServicesPage from "./pages/Services/Services";
 import WorkPage from "./pages/Works/Works";
-import ContactHeader from "./pages/Contact/ContactHeader/ContactHeader";
-import ContactForm from "./pages/Contact/ContactForm/ContactForm";
-import ContactMap from "./pages/Contact/ContactMap/ContactMap";
-import ContactFAQ from "./pages/Contact/ContactFAQ/ContactFAQ";
+import Contact from "./pages/Contact/Contact";
 
 
 function Home() {
@@ -58,10 +55,6 @@ function Home() {
         <Process />
         <Testimonial />
         <FinalCTA />
-        <ContactHeader />
-        <ContactForm />
-        <ContactMap />
-        <ContactFAQ />
       </main>
 
       <Footer />
@@ -87,8 +80,11 @@ function App() {
         {/* Services page */}
         <Route path="/services" element={<ServicesPage />} />
 
-        {/* Services page */}
+        {/* Works page */}
         <Route path="/works" element={<WorkPage />} />
+
+        {/* Contact page */}
+        <Route path="/contact" element={<Contact />} />
 
       </Routes>
 

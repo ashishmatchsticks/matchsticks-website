@@ -5,17 +5,19 @@
 .works-page-header {
   position: relative;
 
+  height: 60svh;
+  min-height: 60svh;
+
+  padding: 7rem 0 3rem;
+
   background: var(--text);
   color: var(--white);
-
-  padding: 11.5rem 0 6rem;
-
-  min-height: 70svh;
 
   display: flex;
   align-items: center;
 
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 
@@ -309,7 +311,7 @@
 .works-ph-title {
   font-family: "Manrope", sans-serif;
 
-  font-size: clamp(2.6rem, 7.2vw, 6rem);
+  font-size: 56px;
 
   font-weight: 800;
 
@@ -362,9 +364,9 @@
 
 @media (max-width: 900px) {
   .works-page-header {
-    padding: 8rem 0 3rem;
-
+    height: auto;
     min-height: 0;
+    padding: 8rem 0 3rem;
   }
 
   .works-ph-crop {
@@ -374,11 +376,8 @@
   .works-ph-bignum {
     top: 50%;
     right: -6vw;
-
     z-index: 1;
-
     font-size: 60vw;
-
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.14);
   }
 }

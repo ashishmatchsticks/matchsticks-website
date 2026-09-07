@@ -4,20 +4,20 @@
 
 .services-stats {
   position: relative;
-
   background: var(--text);
   color: var(--white);
 }
 
 .services-stats-wrap {
-  width: min(88vw, 1400px);
+  width: 100%;
+  max-width: 1400px;
 
   margin: 0 auto;
 
   display: flex;
   flex-wrap: wrap;
 
-  padding: 2.6rem 0;
+  padding: 2.6rem 6vw;
 }
 
 
@@ -55,7 +55,7 @@
 
   font-weight: 800;
 
-  font-size: 2.2rem;
+  font-size: 36px;
 
   line-height: 1;
 
@@ -86,9 +86,10 @@
 
 @media (max-width: 900px) {
   .services-stats-wrap {
-    width: min(88vw, 1400px);
+    width: 100%;
+    max-width: 1400px;
 
-    padding: 2rem 0;
+    padding: 2rem 6vw;
 
     gap: 0;
   }
@@ -109,15 +110,22 @@
 }
 
 
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 600px) {
   .services-stats-wrap {
+    width: 100%;
+    max-width: 1400px;
+
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
     row-gap: 1.5rem;
 
-    padding: 1.8rem 0;
+    padding: 1.8rem 5vw;
   }
 
   .services-stat {

@@ -43,13 +43,13 @@ function Navbar() {
           Services
         </Link>
 
-        <Link to="/#contact" onClick={closeMenu}>
+        <Link to="/contact" onClick={closeMenu}>
           Contact
         </Link>
       </div>
 
       {/* Desktop CTA */}
-      <Link to="/#contact" className="navbar-cta" onClick={closeMenu}>
+      <Link to="/contact" className="navbar-cta" onClick={closeMenu}>
         LET'S TALK →
       </Link>
 
@@ -78,12 +78,12 @@ function Navbar() {
           Services
         </Link>
 
-        <Link to="/#contact" onClick={closeMenu}>
+        <Link to="/contact" onClick={closeMenu}>
           Contact
         </Link>
 
         <Link
-          to="/#contact"
+          to="/contact"
           className="mobile-menu-cta"
           onClick={closeMenu}
         >
