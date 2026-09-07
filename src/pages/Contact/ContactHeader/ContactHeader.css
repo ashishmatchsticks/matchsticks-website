@@ -1,0 +1,378 @@
+.contact-page-header {
+  position: relative;
+
+  min-height: 60svh;
+
+  padding: 11.5rem 0 6rem;
+
+  display: flex;
+  align-items: center;
+
+  background: var(--text);
+  color: var(--white);
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   BACKGROUND GLOW
+======================================== */
+
+.contact-page-header::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle 560px at var(--mx, 78%) var(--my, 18%),
+      rgba(155, 1, 3, 0.42),
+      transparent 60%
+    );
+
+  pointer-events: none;
+
+  transition: background 0.4s ease;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.contact-page-header::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 64px 64px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle 700px at var(--mx, 78%) var(--my, 18%),
+      #000 0%,
+      transparent 70%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle 700px at var(--mx, 78%) var(--my, 18%),
+      #000 0%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   WRAPPER
+======================================== */
+
+.contact-ph-wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 6vw;
+}
+
+
+/* ========================================
+   CROP MARKS
+======================================== */
+
+.contact-ph-crop {
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+
+  pointer-events: none;
+
+  z-index: 3;
+
+  opacity: 0.55;
+}
+
+.contact-ph-crop::before,
+.contact-ph-crop::after {
+  content: "";
+
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.contact-ph-crop::before {
+  width: 100%;
+  height: 1px;
+
+  top: 50%;
+}
+
+.contact-ph-crop::after {
+  width: 1px;
+  height: 100%;
+
+  left: 50%;
+}
+
+.contact-ph-crop-tl {
+  top: 2.2rem;
+  left: 6vw;
+}
+
+.contact-ph-crop-tr {
+  top: 2.2rem;
+  right: 6vw;
+}
+
+.contact-ph-crop-bl {
+  bottom: 2.2rem;
+  left: 6vw;
+}
+
+.contact-ph-crop-br {
+  bottom: 2.2rem;
+  right: 6vw;
+}
+
+
+/* ========================================
+   BIG NUMBER
+======================================== */
+
+.contact-ph-bignum {
+  position: absolute;
+
+  top: 50%;
+  right: 10%;
+
+  z-index: 1;
+
+  display: block;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: min(40vw, 30rem);
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.18);
+
+  letter-spacing: -0.04em;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  transform: translateY(-50%);
+
+  will-change: transform;
+}
+
+
+/* ========================================
+   BREADCRUMB
+======================================== */
+
+.contact-ph-crumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-bottom: 2rem;
+
+  font-size: 0.78rem;
+
+  color: #c9c2bd;
+
+  letter-spacing: 0.05em;
+}
+
+.contact-ph-crumb a {
+  color: #c9c2bd;
+
+  transition: color 0.25s ease;
+}
+
+.contact-ph-crumb a:hover {
+  color: var(--white);
+}
+
+.contact-ph-separator {
+  color: var(--red);
+}
+
+
+/* ========================================
+   TAG
+======================================== */
+
+.contact-ph-tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-bottom: 1.4rem;
+
+  padding: 0.4rem 0.9rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  color: #e9e2db;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.contact-ph-pulse {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  box-shadow:
+    0 0 0 0 rgba(155, 1, 3, 0.7);
+
+  animation: contactPulseDot 2s infinite;
+}
+
+@keyframes contactPulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(155, 1, 3, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(155, 1, 3, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(155, 1, 3, 0);
+  }
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.contact-ph-title {
+  max-width: 900px;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2.6rem, 7.2vw, 6rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.02em;
+}
+
+.contact-ph-line {
+  display: block;
+
+  overflow: hidden;
+}
+
+.contact-ph-line > span {
+  display: block;
+}
+
+.contact-ph-highlight {
+  color: var(--red);
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.contact-ph-sub {
+  max-width: 560px;
+
+  margin-top: 1.6rem;
+
+  color: #c9c2bd;
+
+  font-size: 1.05rem;
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .contact-page-header {
+    min-height: 0;
+
+    padding: 8rem 0 3rem;
+  }
+
+  .contact-ph-bignum {
+    right: -6vw;
+    font-size: 60vw;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  }
+
+  .contact-ph-crop {
+    display: none;
+  }
+
+  .contact-ph-title {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .contact-ph-sub {
+    font-size: 0.95rem;
+  }
+}

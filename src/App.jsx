@@ -28,6 +28,7 @@ import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 import About from "./pages/About/About";
 import ServicesPage from "./pages/Services/Services";
 import WorkPage from "./pages/Works/Works";
+import ContactHeader from "./pages/Contact/ContactHeader/ContactHeader";
 
 
 function Home() {
@@ -54,6 +55,7 @@ function Home() {
         <Process />
         <Testimonial />
         <FinalCTA />
+        <ContactHeader />
       </main>
 
       <Footer />
