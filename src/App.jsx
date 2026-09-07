@@ -29,6 +29,7 @@ import About from "./pages/About/About";
 import ServicesPage from "./pages/Services/Services";
 import WorkPage from "./pages/Works/Works";
 import ContactHeader from "./pages/Contact/ContactHeader/ContactHeader";
+import ContactForm from "./pages/Contact/ContactForm/ContactForm";
 
 
 function Home() {
@@ -56,6 +57,7 @@ function Home() {
         <Testimonial />
         <FinalCTA />
         <ContactHeader />
+        <ContactForm />
       </main>
 
       <Footer />

@@ -1,0 +1,477 @@
+/* ========================================
+   CONTACT FORM SECTION
+======================================== */
+
+.contact-form-section {
+  position: relative;
+
+  padding: 8rem 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+}
+
+
+/* ========================================
+   WRAPPER
+======================================== */
+
+.contact-form-wrap {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 6vw;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.contact-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5vw;
+
+  align-items: start;
+}
+
+
+/* ========================================
+   FORM HEADING
+======================================== */
+
+.contact-form-heading {
+  margin-bottom: 2.2rem;
+}
+
+.contact-form-eyebrow {
+  display: block;
+
+  margin-bottom: 0.7rem;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: var(--red);
+}
+
+.contact-form-heading h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.6rem;
+}
+
+.contact-field {
+  margin-bottom: 1.8rem;
+}
+
+.contact-field label {
+  display: block;
+
+  margin-bottom: 0.6rem;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: var(--text-2);
+}
+
+.contact-field input,
+.contact-field textarea,
+.contact-field select {
+  width: 100%;
+
+  padding: 0.7rem 0;
+
+  border: none;
+
+  border-bottom: 1px solid rgba(23, 20, 20, 0.28);
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 1.05rem;
+
+  transition: border-color 0.25s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: rgba(23, 20, 20, 0.35);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus,
+.contact-field select:focus {
+  border-color: var(--red);
+}
+
+.contact-field textarea {
+  min-height: 110px;
+
+  resize: vertical;
+}
+
+.contact-field select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--text) 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--text) 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 8px) 1rem,
+    calc(100% - 2px) 1rem;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* ========================================
+   SUBMIT
+======================================== */
+
+.contact-submit-btn {
+  margin-top: 1rem;
+
+  padding: 1.05rem 2.4rem;
+
+  border: none;
+
+  background: var(--red);
+
+  color: var(--white);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.contact-submit-btn:hover {
+  background: var(--red-dark);
+}
+
+
+/* ========================================
+   FORM NOTE
+======================================== */
+
+.contact-form-note {
+  margin-top: 1rem;
+
+  color: var(--text-2);
+
+  font-size: 0.82rem;
+}
+
+.contact-form-note a {
+  color: inherit;
+
+  transition: color 0.25s ease;
+}
+
+.contact-form-note a:hover {
+  color: var(--red);
+}
+
+
+/* ========================================
+   SUCCESS MESSAGE
+======================================== */
+
+.contact-form-success {
+  padding: 2.4rem;
+
+  border: 1px solid rgba(23, 20, 20, 0.15);
+
+  border-radius: 6px;
+}
+
+.contact-form-success h3 {
+  margin-bottom: 0.6rem;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 1.4rem;
+
+  font-weight: 800;
+}
+
+.contact-form-success p {
+  max-width: 560px;
+
+  color: var(--text-2);
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   INFO SIDE
+======================================== */
+
+.contact-info-block {
+  margin-bottom: 2.6rem;
+
+  padding-bottom: 2.6rem;
+
+  border-bottom: 1px solid rgba(23, 20, 20, 0.14);
+}
+
+.contact-info-block:last-child {
+  border-bottom: none;
+}
+
+.contact-info-block h4 {
+  margin-bottom: 1rem;
+
+  color: var(--red);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   BIG LINKS
+======================================== */
+
+.contact-big-link {
+  position: relative;
+
+  display: inline-block;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+}
+
+.contact-big-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -2px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--red);
+
+  transition: width 0.3s ease;
+}
+
+.contact-big-link:hover::after {
+  width: 100%;
+}
+
+.contact-phone-link {
+  margin-top: 0.6rem;
+}
+
+
+/* ========================================
+   INFO TEXT
+======================================== */
+
+.contact-info-block p {
+  color: var(--text-2);
+
+  font-size: 0.98rem;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   STUDIOS
+======================================== */
+
+.contact-studio {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 0.9rem 0;
+
+  border-top: 1px solid rgba(23, 20, 20, 0.1);
+}
+
+.contact-studio:first-of-type {
+  border-top: none;
+}
+
+.contact-city {
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 700;
+}
+
+.contact-address {
+  max-width: 220px;
+
+  color: var(--text-2);
+
+  font-size: 0.9rem;
+
+  text-align: right;
+}
+
+
+/* ========================================
+   SOCIAL
+======================================== */
+
+.contact-social-row {
+  display: flex;
+
+  gap: 1.6rem;
+
+  margin-top: 0.4rem;
+}
+
+.contact-social-row a {
+  position: relative;
+
+  padding-bottom: 2px;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+}
+
+.contact-social-row a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--red);
+
+  transition: width 0.3s ease;
+}
+
+.contact-social-row a:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .contact-form-section {
+    padding: 4.5rem 0;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .contact-studio {
+    align-items: flex-start;
+  }
+
+  .contact-address {
+    max-width: 180px;
+  }
+
+  .contact-social-row {
+    gap: 1.2rem;
+  }
+}
