@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -7,22 +8,23 @@ function Footer() {
 
         <div className="footer-top">
 
-          <div className="footer-logo">
+          <Link to="/" className="footer-logo">
             STRIKE<span>.</span>
-          </div>
+          </Link>
 
           <div className="footer-nav">
 
+            {/* Sitemap */}
             <div className="footer-column">
               <h5>Sitemap</h5>
 
-              <a href="#work">Work</a>
-              <a href="#about">About</a>
-              <a href="#services">Services</a>
-              <a href="#clients">Clients</a>
-              <a href="#contact">Contact</a>
+              <Link to="/work">Work</Link>
+              <Link to="/about">About</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/contact">Contact</Link>
             </div>
 
+            {/* Contact */}
             <div className="footer-column">
               <h5>Contact</h5>
 
@@ -31,12 +33,21 @@ function Footer() {
               <p>Ahmedabad, India</p>
             </div>
 
+            {/* Social */}
             <div className="footer-column">
               <h5>Social</h5>
 
-              <a href="#">Instagram</a>
-              <a href="#">LinkedIn</a>
-              <a href="#">YouTube</a>
+              <a href="#" target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+
+              <a href="#" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+
+              <a href="#" target="_blank" rel="noreferrer">
+                YouTube
+              </a>
             </div>
 
           </div>

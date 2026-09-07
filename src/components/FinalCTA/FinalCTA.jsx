@@ -71,7 +71,7 @@ function FinalCTA() {
 
           <a
             ref={primaryRef}
-            href="#contact"
+            href="contact"
             className="final-cta-primary"
           >
             START A PROJECT

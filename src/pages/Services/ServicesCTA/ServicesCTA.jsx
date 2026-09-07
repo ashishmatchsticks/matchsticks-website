@@ -16,7 +16,7 @@ function ServicesCTA() {
         </h2>
 
         <div className="services-cta-buttons">
-          <a href="/#contact" className="services-cta-primary">
+          <a href="/contact" className="services-cta-primary">
             START A PROJECT <span>↗</span>
           </a>
 
