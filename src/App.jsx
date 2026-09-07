@@ -23,6 +23,7 @@ import AboutHeader from "./pages/About/AboutHeader";
 import AboutStats from "./pages/About/AboutStats/AboutStats";
 import AboutStory from "./pages/About/AboutStory/AboutStory";
 import AboutTimeline from "./pages/About/AboutTimeline/AboutTimeline";
+import AboutValues from "./pages/About/AboutValues/AboutValues";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
       <AboutStats />
       <AboutStory />
       <AboutTimeline />
+      <AboutValues />
     </main>
     </>
   );
