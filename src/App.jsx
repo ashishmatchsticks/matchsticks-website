@@ -20,6 +20,7 @@ import Stats from "./components/Stats/Stats";
 import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 import AboutHeader from "./pages/About/AboutHeader";
+import AboutStats from "./pages/About/AboutStats/AboutStats";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <FinalCTA />
       <Footer />
       <AboutHeader />
+      <AboutStats />
     </main>
     </>
   );
