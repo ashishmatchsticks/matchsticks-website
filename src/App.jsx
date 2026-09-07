@@ -29,6 +29,7 @@ import About from "./pages/About/About";
 import ServicesPage from "./pages/Services/Services";
 import WorksHeader from "./pages/Works/WorksHeader/WorksHeader";
 import WorksStats from "./pages/Works/WorksStats/WorksStats";
+import WorksGrid from "./pages/Works/WorksGrid/WorksGrid";
 
 
 function Home() {
@@ -57,6 +58,7 @@ function Home() {
         <FinalCTA />
         <WorksHeader />
         <WorksStats />
+        <WorksGrid />
       </main>
 
       <Footer />
