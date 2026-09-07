@@ -29,6 +29,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ServicesHeader from "./pages/Services/ServicesHeader/ServicesHeader";
 import ServicesStats from "./pages/Services/ServicesStats/ServicesStats";
 import ServiceDetails from "./pages/Services/ServiceDetails/ServiceDetails";
+import ServicesProcess from "./pages/Services/ServicesProcess/ServicesProcess";
 
 function Home() {
   return (
@@ -57,6 +58,7 @@ function Home() {
         <ServicesHeader />
         <ServicesStats />
         <ServiceDetails />
+        <ServicesProcess />
       </main>
 
       <Footer />
