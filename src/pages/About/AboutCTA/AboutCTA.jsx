@@ -101,7 +101,7 @@ function AboutCTA() {
 
           <div className="about-cta-actions">
             <a
-              href="/#contact"
+              href="/contact"
               className="about-cta-button about-cta-button-primary"
             >
               START A PROJECT

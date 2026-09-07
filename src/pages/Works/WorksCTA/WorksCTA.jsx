@@ -15,7 +15,7 @@ function WorksCTA() {
 
         <div className="works-cta-buttons">
           <a
-            href="/#contact"
+            href="/contact"
             className="works-cta-primary"
           >
             START A PROJECT
