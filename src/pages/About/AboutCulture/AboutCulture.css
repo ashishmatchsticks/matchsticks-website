@@ -1,0 +1,167 @@
+.about-culture-section {
+  position: relative;
+  padding: 8rem 0;
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid rgba(23, 20, 20, 0.12);
+}
+
+.about-culture-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+/* Heading */
+
+.about-culture-heading {
+  margin-bottom: 3.5rem;
+}
+
+.about-culture-eyebrow {
+  display: block;
+  margin-bottom: 0.7rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--red);
+}
+
+.about-culture-heading h2 {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+}
+
+/* Image collage */
+
+.about-culture-grid {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 1.2rem;
+
+  height: 70vh;
+  min-height: 600px;
+}
+
+.about-culture-image {
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  background: #ddd;
+}
+
+.about-culture-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.about-culture-image:hover img {
+  transform: scale(1.04);
+}
+
+/* Large left image */
+
+.about-culture-a {
+  grid-row: 1 / 3;
+}
+
+/* Right images */
+
+.about-culture-b {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.about-culture-c {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .about-culture-section {
+    padding: 5rem 0;
+  }
+
+  .about-culture-wrap {
+    padding: 0 5vw;
+  }
+
+  .about-culture-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-culture-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    height: auto;
+    min-height: 0;
+
+    gap: 1rem;
+  }
+
+  .about-culture-a,
+  .about-culture-b,
+  .about-culture-c {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .about-culture-a,
+  .about-culture-b,
+  .about-culture-c {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .about-culture-section {
+    padding: 4.5rem 0;
+  }
+
+  .about-culture-heading {
+    margin-bottom: 2rem;
+  }
+
+  .about-culture-heading h2 {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  .about-culture-grid {
+    gap: 0.8rem;
+  }
+
+  .about-culture-a,
+  .about-culture-b,
+  .about-culture-c {
+    aspect-ratio: 4 / 5;
+  }
+}

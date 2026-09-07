@@ -19,6 +19,7 @@ import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
 import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
+import AboutCulture from "./pages/About/AboutCulture/AboutCulture";
 import AboutHeader from "./pages/About/AboutHeader";
 import AboutStats from "./pages/About/AboutStats/AboutStats";
 import AboutStory from "./pages/About/AboutStory/AboutStory";
@@ -57,6 +58,7 @@ function App() {
       <AboutTimeline />
       <AboutValues />
       <AboutTeam />
+      <AboutCulture />
     </main>
     </>
   );
