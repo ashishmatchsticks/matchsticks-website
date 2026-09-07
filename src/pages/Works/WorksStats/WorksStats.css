@@ -1,0 +1,116 @@
+/* ========================================
+   WORKS STATS
+======================================== */
+
+.works-stats-section {
+  position: relative;
+
+  background: var(--text);
+  color: var(--white);
+}
+
+
+/* ========================================
+   WRAP
+======================================== */
+
+.works-stats-wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 2.6rem 6vw;
+}
+
+
+/* ========================================
+   STAT ITEM
+======================================== */
+
+.works-stats-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.3rem;
+
+  padding: 0.5rem 2.2rem;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.works-stats-item:last-child {
+  border-right: none;
+}
+
+
+/* ========================================
+   NUMBER
+======================================== */
+
+.works-stats-number {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 2.2rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  color: var(--red);
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.works-stats-label {
+  font-size: 0.8rem;
+
+  color: #c9c2bd;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .works-stats-wrap {
+    padding: 2rem 6vw;
+
+    gap: 0;
+  }
+
+  .works-stats-item {
+    padding: 0.6rem 1.2rem 1rem;
+
+    border-right: none;
+  }
+
+  .works-stats-number {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .works-stats-wrap {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 1.5rem;
+  }
+
+  .works-stats-item {
+    padding-left: 0;
+  }
+}
