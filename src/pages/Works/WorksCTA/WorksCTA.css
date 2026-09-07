@@ -1,0 +1,155 @@
+/* ========================================
+   WORKS CTA
+======================================== */
+
+.works-cta-section {
+  position: relative;
+
+  padding: 8rem 0;
+
+  background: var(--red);
+
+  color: var(--white);
+
+  text-align: center;
+}
+
+.works-cta-wrap {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 6vw;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.works-cta-section h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2.6rem, 7vw, 6.5rem);
+
+  font-weight: 800;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.055em;
+
+  color: var(--white);
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.works-cta-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.2rem;
+
+  margin-top: 2.6rem;
+
+  flex-wrap: wrap;
+}
+
+.works-cta-buttons a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 3.5rem;
+
+  padding: 1rem 2rem;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* ========================================
+   PRIMARY
+======================================== */
+
+.works-cta-primary {
+  background: var(--white);
+
+  color: var(--red);
+}
+
+.works-cta-primary:hover {
+  background: var(--text);
+
+  color: var(--white);
+
+  transform: translateY(-3px);
+}
+
+
+/* ========================================
+   SECONDARY
+======================================== */
+
+.works-cta-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  color: var(--white);
+
+  background: transparent;
+}
+
+.works-cta-secondary:hover {
+  background: var(--white);
+
+  color: var(--red);
+
+  transform: translateY(-3px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .works-cta-section {
+    padding: 6rem 0;
+  }
+
+  .works-cta-buttons {
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    margin-top: 2.2rem;
+  }
+
+  .works-cta-buttons a {
+    width: 100%;
+
+    max-width: 280px;
+  }
+}

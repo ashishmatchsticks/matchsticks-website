@@ -31,6 +31,7 @@ import WorksHeader from "./pages/Works/WorksHeader/WorksHeader";
 import WorksStats from "./pages/Works/WorksStats/WorksStats";
 import WorksGrid from "./pages/Works/WorksGrid/WorksGrid";
 import WorksCaseStudy from "./pages/Works/WorksCaseStudy/WorksCaseStudy";
+import WorksCTA from "./pages/Works/WorksCTA/WorksCTA";
 
 
 function Home() {
@@ -62,6 +63,7 @@ function Home() {
         <WorksGrid />
         <WorksCaseStudy />
         <Testimonial />
+        <WorksCTA />
       </main>
 
       <Footer />
