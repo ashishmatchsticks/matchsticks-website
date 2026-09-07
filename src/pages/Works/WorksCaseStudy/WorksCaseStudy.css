@@ -1,0 +1,261 @@
+/* ========================================
+   WORKS CASE STUDY
+======================================== */
+
+.works-case-section {
+  position: relative;
+
+  padding: 8rem 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  border-top: 1px solid rgba(23, 20, 20, 0.12);
+}
+
+
+/* ========================================
+   WRAP
+======================================== */
+
+.works-case-wrap {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 6vw;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.works-case-heading {
+  margin-bottom: 2.5rem;
+}
+
+.works-case-eyebrow {
+  display: block;
+
+  margin-bottom: 0.7rem;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: var(--red);
+}
+
+.works-case-heading h2 {
+  margin: 0;
+
+  max-width: 680px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.02em;
+}
+
+.works-case-heading p {
+  max-width: 560px;
+
+  margin-top: 1.2rem;
+
+  color: var(--text-2);
+
+  font-size: 1.05rem;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.works-case-hero {
+  width: 100%;
+
+  aspect-ratio: 16 / 8;
+
+  overflow: hidden;
+
+  margin: 2.5rem 0;
+}
+
+.works-case-hero img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.works-case-hero:hover img {
+  transform: scale(1.02);
+}
+
+
+/* ========================================
+   PROJECT INFO
+======================================== */
+
+.works-case-info {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+
+  gap: 2rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.works-case-info h3 {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+}
+
+
+/* ========================================
+   META
+======================================== */
+
+.works-case-meta {
+  display: flex;
+
+  gap: 2.4rem;
+
+  flex-wrap: wrap;
+}
+
+.works-case-meta-item {
+  min-width: 80px;
+}
+
+.works-case-meta-key {
+  margin-bottom: 0.3rem;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: var(--text-2);
+}
+
+.works-case-meta-value {
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 700;
+}
+
+
+/* ========================================
+   CASE BODY
+======================================== */
+
+.works-case-body {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.2rem;
+}
+
+.works-case-body > div {
+  overflow: hidden;
+}
+
+.works-case-full {
+  grid-column: 1 / 3;
+}
+
+.works-case-body img {
+  display: block;
+
+  width: 100%;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.works-case-body img:hover {
+  transform: scale(1.02);
+}
+
+.works-case-full img {
+  aspect-ratio: 2000 / 860;
+}
+
+.works-case-body > div:not(.works-case-full) img {
+  aspect-ratio: 9 / 11;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .works-case-section {
+    padding: 4.5rem 0;
+  }
+
+  .works-case-body {
+    grid-template-columns: 1fr;
+  }
+
+  .works-case-full {
+    grid-column: 1;
+  }
+
+  .works-case-hero {
+    aspect-ratio: 4 / 3.6;
+  }
+
+  .works-case-info {
+    flex-direction: column;
+  }
+
+  .works-case-meta {
+    gap: 1.5rem 2rem;
+  }
+}

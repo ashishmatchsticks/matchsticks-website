@@ -30,6 +30,7 @@ import ServicesPage from "./pages/Services/Services";
 import WorksHeader from "./pages/Works/WorksHeader/WorksHeader";
 import WorksStats from "./pages/Works/WorksStats/WorksStats";
 import WorksGrid from "./pages/Works/WorksGrid/WorksGrid";
+import WorksCaseStudy from "./pages/Works/WorksCaseStudy/WorksCaseStudy";
 
 
 function Home() {
@@ -59,6 +60,7 @@ function Home() {
         <WorksHeader />
         <WorksStats />
         <WorksGrid />
+        <WorksCaseStudy />
       </main>
 
       <Footer />
