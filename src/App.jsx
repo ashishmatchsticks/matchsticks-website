@@ -19,6 +19,7 @@ import Services from "./components/Services/Services";
 import Stats from "./components/Stats/Stats";
 import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
+import AboutHeader from "./pages/About/AboutHeader";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       <Testimonial />
       <FinalCTA />
       <Footer />
+      <AboutHeader />
     </main>
     </>
   );
