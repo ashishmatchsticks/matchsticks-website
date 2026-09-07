@@ -22,6 +22,7 @@ import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 import AboutHeader from "./pages/About/AboutHeader";
 import AboutStats from "./pages/About/AboutStats/AboutStats";
 import AboutStory from "./pages/About/AboutStory/AboutStory";
+import AboutTimeline from "./pages/About/AboutTimeline/AboutTimeline";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
       <AboutHeader />
       <AboutStats />
       <AboutStory />
+      <AboutTimeline />
     </main>
     </>
   );
