@@ -1,0 +1,226 @@
+/* ========================================
+   CONTACT FAQ
+======================================== */
+
+.contact-faq-section {
+  position: relative;
+
+  padding: 8rem 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  border-top: 1px solid rgba(23, 20, 20, 0.12);
+}
+
+
+/* ========================================
+   WRAPPER
+======================================== */
+
+.contact-faq-wrap {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 6vw;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.contact-faq-heading {
+  margin-bottom: 3rem;
+}
+
+.contact-faq-eyebrow {
+  display: block;
+
+  margin-bottom: 0.7rem;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: var(--red);
+}
+
+.contact-faq-heading h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* ========================================
+   FAQ ITEM
+======================================== */
+
+.contact-faq-item {
+  border-bottom: 1px solid rgba(23, 20, 20, 0.15);
+}
+
+.contact-faq-item:first-child {
+  border-top: 1px solid rgba(23, 20, 20, 0.15);
+}
+
+
+/* ========================================
+   QUESTION
+======================================== */
+
+.contact-faq-question {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1.8rem 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.contact-faq-question h4 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 1.15rem;
+
+  font-weight: 700;
+}
+
+
+/* ========================================
+   PLUS ICON
+======================================== */
+
+.contact-faq-plus {
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(23, 20, 20, 0.3);
+
+  border-radius: 50%;
+
+  transition: transform 0.35s ease;
+}
+
+.contact-faq-plus::before,
+.contact-faq-plus::after {
+  content: "";
+
+  position: absolute;
+
+  background: var(--text);
+}
+
+.contact-faq-plus::before {
+  top: 7px;
+  bottom: 7px;
+
+  left: 50%;
+
+  width: 1px;
+
+  transform: translateX(-50%);
+}
+
+.contact-faq-plus::after {
+  top: 50%;
+
+  left: 7px;
+  right: 7px;
+
+  height: 1px;
+
+  transform: translateY(-50%);
+}
+
+.contact-faq-item.open .contact-faq-plus {
+  transform: rotate(135deg);
+}
+
+
+/* ========================================
+   ANSWER
+======================================== */
+
+.contact-faq-answer {
+  overflow: hidden;
+
+  transition: max-height 0.4s ease;
+}
+
+.contact-faq-answer p {
+  max-width: 640px;
+
+  margin: 0;
+
+  padding: 0 0 1.8rem;
+
+  color: var(--text-2);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+  .contact-faq-section {
+    padding: 4.5rem 0;
+  }
+
+  .contact-faq-heading {
+    margin-bottom: 2rem;
+  }
+
+  .contact-faq-question {
+    padding: 1.5rem 0;
+  }
+
+  .contact-faq-question h4 {
+    font-size: 1rem;
+  }
+}

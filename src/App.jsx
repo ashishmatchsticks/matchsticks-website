@@ -30,6 +30,8 @@ import ServicesPage from "./pages/Services/Services";
 import WorkPage from "./pages/Works/Works";
 import ContactHeader from "./pages/Contact/ContactHeader/ContactHeader";
 import ContactForm from "./pages/Contact/ContactForm/ContactForm";
+import ContactMap from "./pages/Contact/ContactMap/ContactMap";
+import ContactFAQ from "./pages/Contact/ContactFAQ/ContactFAQ";
 
 
 function Home() {
@@ -58,6 +60,8 @@ function Home() {
         <FinalCTA />
         <ContactHeader />
         <ContactForm />
+        <ContactMap />
+        <ContactFAQ />
       </main>
 
       <Footer />
