@@ -31,18 +31,12 @@ function Hero() {
         ease: "power3.out",
       });
 
-      gsap.to(".hero-media img", {
-        scale: 1,
-        duration: 2,
-        ease: "power2.out",
-      });
-
-      // Image zoom while scrolling
+      // Hero image scroll zoom
       gsap.to(".hero-media img", {
         scale: 1.3,
         ease: "none",
         scrollTrigger: {
-          trigger: ".hero",
+          trigger: hero,
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -71,7 +65,6 @@ function Hero() {
 
   return (
     <section ref={heroRef} className="hero">
-      {/* Background image */}
       <div className="hero-media">
         <img
           src="https://images.unsplash.com/photo-1559613671-dfe2fb6a7680?auto=format&fit=crop&w=1800&h=1100&q=80"
@@ -79,7 +72,6 @@ function Hero() {
         />
       </div>
 
-      {/* Content */}
       <div className="hero-content">
         <div className="hero-tag">
           Branding · Outdoor · Campaigns · Execution
