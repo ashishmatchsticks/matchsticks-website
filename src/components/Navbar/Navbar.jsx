@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -24,23 +25,37 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       {/* Logo */}
-      <a href="#" className="navbar-logo" onClick={closeMenu}>
+      <Link to="/" className="navbar-logo" onClick={closeMenu}>
         matchsticks<span>.</span>
-      </a>
+      </Link>
 
       {/* Desktop navigation */}
       <div className="navbar-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
+        <Link to="/#work" onClick={closeMenu}>
+          Work
+        </Link>
+
+        <Link to="/about" onClick={closeMenu}>
+          About
+        </Link>
+
+        <Link to="/#services" onClick={closeMenu}>
+          Services
+        </Link>
+
+        <Link to="/#clients" onClick={closeMenu}>
+          Clients
+        </Link>
+
+        <Link to="/#contact" onClick={closeMenu}>
+          Contact
+        </Link>
       </div>
 
       {/* Desktop CTA */}
-      <a href="#contact" className="navbar-cta">
+      <Link to="/#contact" className="navbar-cta" onClick={closeMenu}>
         LET'S TALK →
-      </a>
+      </Link>
 
       {/* Mobile hamburger */}
       <button
@@ -55,29 +70,33 @@ function Navbar() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <a href="#work" onClick={closeMenu}>
+        <Link to="/#work" onClick={closeMenu}>
           Work
-        </a>
+        </Link>
 
-        <a href="#about" onClick={closeMenu}>
+        <Link to="/about" onClick={closeMenu}>
           About
-        </a>
+        </Link>
 
-        <a href="#services" onClick={closeMenu}>
+        <Link to="/#services" onClick={closeMenu}>
           Services
-        </a>
+        </Link>
 
-        <a href="#clients" onClick={closeMenu}>
+        <Link to="/#clients" onClick={closeMenu}>
           Clients
-        </a>
+        </Link>
 
-        <a href="#contact" onClick={closeMenu}>
+        <Link to="/#contact" onClick={closeMenu}>
           Contact
-        </a>
+        </Link>
 
-        <a href="#contact" className="mobile-menu-cta" onClick={closeMenu}>
+        <Link
+          to="/#contact"
+          className="mobile-menu-cta"
+          onClick={closeMenu}
+        >
           LET'S TALK →
-        </a>
+        </Link>
       </div>
     </nav>
   );

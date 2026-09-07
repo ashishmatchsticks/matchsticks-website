@@ -6,14 +6,14 @@ import "./Portal.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const FRAME_LABELS = [
-    "Brand Identity",
-    "Social Media Marketing",
-    "Web Design & Development",
-    "Performance Marketing",
-    "Digital Strategy",
-    "Video Production",
-    "Corporate Presentation"                                   
-]
+  "Brand Identity",
+  "Social Media Marketing",
+  "Web Design & Development",
+  "Performance Marketing",
+  "Digital Strategy",
+  "Video Production",
+  "Corporate Presentation",
+];
 
 function Portal() {
   const portalRef = useRef(null);
@@ -23,128 +23,153 @@ function Portal() {
 
     if (!portal) return;
 
-    const ctx = gsap.context(() => {
-      const frames = gsap.utils.toArray(".portal-frame");
-      const core = portal.querySelector(".portal-core");
-      const chars = portal.querySelectorAll(".p-char");
-      const hint = portal.querySelector(".portal-hint");
+    const frames = Array.from(
+      portal.querySelectorAll(".portal-frame")
+    );
 
-      const frameCount = frames.length;
+    const core = portal.querySelector(".portal-core");
+    const chars = portal.querySelectorAll(".p-char");
+    const hint = portal.querySelector(".portal-hint");
 
-      /*
-       * Desktop
-       * ----------------------------------
-       * Pin the section while the frames
-       * fly toward the viewer.
-       */
-      if (window.innerWidth > 900) {
-        const duration = 0.34;
-        const coreStart = 0.8;
+    const frameCount = frames.length;
 
-        const stagger =
-          frameCount > 1
-            ? (coreStart - duration) / (frameCount - 1)
-            : 0;
+    let scrollTrigger = null;
+    let mobileTween = null;
 
-        ScrollTrigger.create({
-          trigger: portal,
-          start: "top top",
-          end: "+=280%",
-          scrub: 1,
-          pin: true,
-          invalidateOnRefresh: true,
+    /*
+     * DESKTOP
+     * ----------------------------------
+     */
+    if (window.innerWidth > 900) {
+      const duration = 0.34;
+      const coreStart = 0.8;
 
-          onUpdate: (self) => {
-            const progress = self.progress;
+      const stagger =
+        frameCount > 1
+          ? (coreStart - duration) / (frameCount - 1)
+          : 0;
 
-            frames.forEach((frame, index) => {
-              const frameProgress = gsap.utils.clamp(
-                0,
-                1,
-                (progress - index * stagger) / duration
-              );
+      scrollTrigger = ScrollTrigger.create({
+        trigger: portal,
+        start: "top top",
+        end: "+=280%",
+        scrub: 1,
+        pin: true,
+        invalidateOnRefresh: true,
 
-              updateFrame(frame, frameProgress);
-            });
+        onUpdate: (self) => {
+          const progress = self.progress;
 
-            const coreProgress =
-              progress > coreStart
-                ? Math.min(
-                    1,
-                    (progress - coreStart) /
-                      (1 - coreStart)
-                  )
-                : 0;
-
-            updateCore(
-              core,
-              chars,
-              coreProgress
+          frames.forEach((frame, index) => {
+            const frameProgress = gsap.utils.clamp(
+              0,
+              1,
+              (progress - index * stagger) / duration
             );
 
+            updateFrame(frame, frameProgress);
+          });
+
+          const coreProgress =
+            progress > coreStart
+              ? Math.min(
+                  1,
+                  (progress - coreStart) /
+                    (1 - coreStart)
+                )
+              : 0;
+
+          updateCore(
+            core,
+            chars,
+            coreProgress
+          );
+
+          if (hint) {
             hint.style.opacity =
               (1 - Math.min(1, progress / 0.15)) *
               0.7;
-          },
-        });
-      }
+          }
+        },
+      });
+    }
 
-      /*
-       * Mobile
-       * ----------------------------------
-       * Don't pin or hijack scrolling.
-       * Play a short automatic fly-through
-       * when the section enters the viewport.
-       */
-      else {
-        ScrollTrigger.create({
-          trigger: portal,
-          start: "top 75%",
-          once: true,
+    /*
+     * MOBILE
+     * ----------------------------------
+     */
+    else {
+      scrollTrigger = ScrollTrigger.create({
+        trigger: portal,
+        start: "top 75%",
+        once: true,
 
-          onEnter: () => {
+        onEnter: () => {
+          if (hint) {
             hint.style.opacity = 0;
+          }
 
-            const state = { progress: 0 };
+          const state = {
+            progress: 0,
+          };
 
-            gsap.to(state, {
-              progress: 1,
-              duration: 2.2,
-              ease: "power2.inOut",
+          mobileTween = gsap.to(state, {
+            progress: 1,
+            duration: 2.2,
+            ease: "power2.inOut",
 
-              onUpdate: () => {
-                frames.forEach((frame, index) => {
-                  const frameProgress = gsap.utils.clamp(
+            onUpdate: () => {
+              frames.forEach((frame, index) => {
+                const frameProgress =
+                  gsap.utils.clamp(
                     0,
                     1,
-                    (state.progress - index * 0.08) /
+                    (state.progress -
+                      index * 0.08) /
                       0.45
                   );
 
-                  updateFrame(frame, frameProgress);
-                });
+                updateFrame(
+                  frame,
+                  frameProgress
+                );
+              });
 
-                const coreProgress = gsap.utils.clamp(
+              const coreProgress =
+                gsap.utils.clamp(
                   0,
                   1,
                   (state.progress - 0.62) /
                     0.38
                 );
 
-                updateCore(
-                  core,
-                  chars,
-                  coreProgress
-                );
-              },
-            });
-          },
-        });
-      }
-    }, portal);
+              updateCore(
+                core,
+                chars,
+                coreProgress
+              );
+            },
+          });
+        },
+      });
+    }
 
+    /*
+     * CLEANUP
+     * ----------------------------------
+     * Only kill the things we created.
+     * No gsap.context() / ctx.revert().
+     */
     return () => {
-      ctx.revert();
+      if (mobileTween) {
+        mobileTween.kill();
+        mobileTween = null;
+      }
+
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+        scrollTrigger = null;
+      }
     };
   }, []);
 
@@ -166,19 +191,31 @@ function Portal() {
 
       <div className="portal-core">
         <span className="portal-word">
-        {"IMPOSSIBLE".split("").map((char, index) => (
-            <span className="p-char" key={index}>
-            {char}
-            </span>
-        ))}
+          {"IMPOSSIBLE".split("").map(
+            (char, index) => (
+              <span
+                className="p-char"
+                key={index}
+              >
+                {char}
+              </span>
+            )
+          )}
         </span>
 
         <span className="portal-word">
-        {"TO IGNORE.".split("").map((char, index) => (
-            <span className="p-char" key={index}>
-            {char === " " ? "\u00A0" : char}
-            </span>
-        ))}
+          {"TO IGNORE.".split("").map(
+            (char, index) => (
+              <span
+                className="p-char"
+                key={index}
+              >
+                {char === " "
+                  ? "\u00A0"
+                  : char}
+              </span>
+            )
+          )}
         </span>
       </div>
 
@@ -225,11 +262,12 @@ function updateCore(core, chars, progress) {
     const delay =
       (index / chars.length) * 0.55;
 
-    const localProgress = gsap.utils.clamp(
-      0,
-      1,
-      (progress - delay) * 2.4
-    );
+    const localProgress =
+      gsap.utils.clamp(
+        0,
+        1,
+        (progress - delay) * 2.4
+      );
 
     char.style.opacity = localProgress;
 
