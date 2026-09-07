@@ -1,0 +1,215 @@
+/* ========================================
+   SERVICES FAQ
+======================================== */
+
+.services-faq-section {
+  padding: 8rem 0;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.services-faq-wrap {
+  width: min(88vw, 1400px);
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.services-faq-heading {
+  margin-bottom: 4rem;
+}
+
+.services-faq-heading span {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--red);
+}
+
+.services-faq-heading h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 800;
+
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   FAQ LIST
+======================================== */
+
+.services-faq-list {
+  border-top: 1px solid rgba(23, 20, 20, 0.2);
+}
+
+
+/* ========================================
+   FAQ ITEM
+======================================== */
+
+.services-faq-item {
+  border-bottom: 1px solid rgba(23, 20, 20, 0.2);
+}
+
+
+/* ========================================
+   QUESTION
+======================================== */
+
+.services-faq-question {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding: 1.8rem 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--text);
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.services-faq-question h3 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  transition: color 0.25s ease;
+}
+
+.services-faq-question:hover h3 {
+  color: var(--red);
+}
+
+
+/* ========================================
+   PLUS
+======================================== */
+
+.services-faq-plus {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  color: var(--red);
+
+  transition: transform 0.3s ease;
+}
+
+.services-faq-item.is-open .services-faq-plus {
+  transform: rotate(180deg);
+}
+
+
+/* ========================================
+   ANSWER
+======================================== */
+
+.services-faq-answer {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition: grid-template-rows 0.4s ease;
+}
+
+.services-faq-answer.is-open {
+  grid-template-rows: 1fr;
+}
+
+.services-faq-answer-inner {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.services-faq-answer p {
+  max-width: 720px;
+
+  margin: 0;
+
+  padding: 0 4rem 2rem 0;
+
+  color: var(--text-2);
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .services-faq-section {
+    padding: 5rem 0;
+  }
+
+  .services-faq-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .services-faq-question {
+    padding: 1.4rem 0;
+
+    gap: 1rem;
+  }
+
+  .services-faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .services-faq-plus {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    font-size: 1.3rem;
+  }
+
+  .services-faq-answer p {
+    padding: 0 2rem 1.5rem 0;
+
+    font-size: 0.9rem;
+  }
+}

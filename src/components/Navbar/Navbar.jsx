@@ -39,7 +39,7 @@ function Navbar() {
           About
         </Link>
 
-        <Link to="/#services" onClick={closeMenu}>
+        <Link to="/services" onClick={closeMenu}>
           Services
         </Link>
 
@@ -78,7 +78,7 @@ function Navbar() {
           About
         </Link>
 
-        <Link to="/#services" onClick={closeMenu}>
+        <Link to="/services" onClick={closeMenu}>
           Services
         </Link>
 

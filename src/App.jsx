@@ -4,6 +4,7 @@ import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Homepage components
 import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
@@ -23,13 +24,11 @@ import Stats from "./components/Stats/Stats";
 import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 
-// About page
+// Pages
 import About from "./pages/About/About";
-import ScrollToTop from "./components/ScrollToTop";
-import ServicesHeader from "./pages/Services/ServicesHeader/ServicesHeader";
-import ServicesStats from "./pages/Services/ServicesStats/ServicesStats";
-import ServiceDetails from "./pages/Services/ServiceDetails/ServiceDetails";
-import ServicesProcess from "./pages/Services/ServicesProcess/ServicesProcess";
+import ServicesPage from "./pages/Services/Services";
+import WorksHeader from "./pages/Works/WorksHeader/WorksHeader";
+
 
 function Home() {
   return (
@@ -55,10 +54,7 @@ function Home() {
         <Process />
         <Testimonial />
         <FinalCTA />
-        <ServicesHeader />
-        <ServicesStats />
-        <ServiceDetails />
-        <ServicesProcess />
+        <WorksHeader />
       </main>
 
       <Footer />
@@ -66,19 +62,29 @@ function Home() {
   );
 }
 
+
 function App() {
   return (
     <BrowserRouter>
+
       <ScrollToTop />
+
       <Routes>
+
         {/* Homepage */}
         <Route path="/" element={<Home />} />
 
         {/* About page */}
         <Route path="/about" element={<About />} />
+
+        {/* Services page */}
+        <Route path="/services" element={<ServicesPage />} />
+
       </Routes>
+
     </BrowserRouter>
   );
 }
+
 
 export default App;
