@@ -21,6 +21,7 @@ import Testimonial from "./components/Testimonials/Testimonials";
 import VideoShowcase from "./components/VideoShowcase/VideoShowcase";
 import AboutHeader from "./pages/About/AboutHeader";
 import AboutStats from "./pages/About/AboutStats/AboutStats";
+import AboutStory from "./pages/About/AboutStory/AboutStory";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
       <Footer />
       <AboutHeader />
       <AboutStats />
+      <AboutStory />
     </main>
     </>
   );
