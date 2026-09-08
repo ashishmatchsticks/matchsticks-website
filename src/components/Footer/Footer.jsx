@@ -28,8 +28,8 @@ function Footer() {
             <div className="footer-column">
               <h5>Contact</h5>
 
-              <p>+91 98765 43210</p>
-              <p>hello@strike.agency</p>
+              <p>+91 99999 99999</p>
+              <p>hello@matchsticks.in</p>
               <p>Ahmedabad, India</p>
             </div>
 

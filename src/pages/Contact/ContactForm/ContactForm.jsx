@@ -177,7 +177,7 @@ function ContactForm() {
                 <p className="contact-form-note">
                   Prefer email? Write to us directly at{" "}
                   <a href="mailto:hello@strike.agency">
-                    hello@strike.agency
+                    hello@matchsticks.in
                   </a>
                 </p>
 
@@ -209,17 +209,17 @@ function ContactForm() {
               <h4>Direct</h4>
 
               <a
-                href="mailto:hello@strike.agency"
+                href="mailto:hello@matchsticks.in"
                 className="contact-big-link"
               >
-                hello@strike.agency
+                hello@matchsticks.in
               </a>
 
               <a
                 href="tel:+919876543210"
                 className="contact-big-link contact-phone-link"
               >
-                +91 98765 43210
+                +91 99999 999999
               </a>
 
             </div>
