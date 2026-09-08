@@ -9,7 +9,7 @@ function Footer() {
         <div className="footer-top">
 
           <Link to="/" className="footer-logo">
-            STRIKE<span>.</span>
+            matchsticks<span>.</span>
           </Link>
 
           <div className="footer-nav">
