@@ -19,7 +19,7 @@ function WorksHeader() {
     // Initial states
     gsap.set([crumb, tag], {
       opacity: 0,
-    });
+    }); 
 
     gsap.set(lines, {
       y: "110%",

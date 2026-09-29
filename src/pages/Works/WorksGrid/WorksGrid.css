@@ -1,285 +1,381 @@
 /* ========================================
-   WORKS GRID SECTION
+   WORKS GRID — "poster wall"
+   Idea: images sit greyscale like un-pasted
+   proofs; hover develops one in full colour
+   while the rest of the wall recedes.
 ======================================== */
 
 .works-grid-section {
   position: relative;
-
   padding: 8rem 0;
-
   background: var(--bg);
   color: var(--text);
+  overflow: hidden;
 }
 
 .works-grid-wrap {
   width: 100%;
   max-width: 1400px;
-
   margin: 0 auto;
-
   padding: 0 6vw;
 }
 
-
-/* ========================================
-   SECTION HEADING
-======================================== */
+/* ---------- Heading ---------- */
 
 .works-grid-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 3rem;
-}
-
-.works-grid-eyebrow {
-  display: block;
-
-  margin-bottom: 0.7rem;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 0.75rem;
-  font-weight: 600;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  color: var(--red);
 }
 
 .works-grid-heading h2 {
   margin: 0;
-
   font-family: "Manrope", sans-serif;
-
-  font-size: clamp(2rem, 4.4vw, 3.6rem);
-
+  font-size: clamp(2.6rem, 8vw, 7rem);
   font-weight: 800;
-
-  line-height: 0.98;
-
-  letter-spacing: -0.02em;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
 }
 
+.wg-line {
+  display: block;
+}
 
-/* ========================================
-   FILTER BAR
-======================================== */
+/* Second line in red, offset like billboard lettering */
+.wg-outline {
+  color: var(--red);
+  padding-left: 0.6em;
+}
+
+.works-grid-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 0.6rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.works-grid-count strong {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Filters ---------- */
 
 .works-filter-bar {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 0.7rem;
-
+  gap: 0.6rem;
   margin-bottom: 3.4rem;
+  padding-top: 1.4rem;
+  border-top: 2px solid var(--text);
 }
 
 .works-filter-btn {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.25rem;
   border: 1px solid rgba(23, 20, 20, 0.25);
-
   border-radius: 999px;
-
-  padding: 0.55rem 1.2rem;
-
+  padding: 0.6rem 1.25rem;
   background: transparent;
-
   color: var(--text);
-
   font-family: "Inter", sans-serif;
-
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 600;
-
-  letter-spacing: 0.02em;
-
   cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+.works-filter-btn sup {
+  font-size: 0.62rem;
+  font-weight: 700;
+  opacity: 0.55;
+  line-height: 1;
+  margin-top: 0.1rem;
 }
 
 .works-filter-btn:hover {
   border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+.works-filter-btn:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
 }
 
 .works-filter-btn.active {
   background: var(--red);
-
   border-color: var(--red);
-
   color: var(--white);
 }
 
+.works-filter-btn.active sup {
+  opacity: 0.85;
+}
 
-/* ========================================
-   WORK GRID
-======================================== */
+/* ---------- Grid ---------- */
 
 .works-grid {
   display: grid;
-
-  grid-template-columns: repeat(6, 1fr);
-
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-flow: dense;
   gap: 1.4rem;
 }
 
-
-/* ========================================
-   WORK ITEM
-======================================== */
+/* ---------- Item ---------- */
 
 .works-grid-item {
+  --mx: 50%;
+  --my: 50%;
+
   position: relative;
-
   overflow: hidden;
-
   cursor: none;
-
+  isolation: isolate;
   border-radius: 4px;
+  height: clamp(300px, 34vw, 500px);
+  grid-column: span 6;
+  background: #1c1818;
 
-  grid-column: span 3;
+  transition: opacity 0.45s ease, filter 0.45s ease;
 
-  aspect-ratio: 4 / 3;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  /* poster-paste reveal, staggered */
+  animation: wg-reveal 0.9s cubic-bezier(0.7, 0, 0.2, 1) both;
+  animation-delay: calc(var(--i) * 70ms);
 }
 
-.works-grid-wide {
-  grid-column: span 4;
+.works-grid-wide   { grid-column: span 7; }
+.works-grid-narrow { grid-column: span 5; }
+
+/* Red paste sheet that wipes off the image */
+.works-grid-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: var(--red);
+  transform-origin: right;
+  animation: wg-sheet 0.9s cubic-bezier(0.7, 0, 0.2, 1) both;
+  animation-delay: calc(var(--i) * 70ms);
+  pointer-events: none;
 }
 
-.works-grid-narrow {
-  grid-column: span 2;
+@keyframes wg-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
 }
 
+@keyframes wg-sheet {
+  0%, 35% { transform: scaleX(1); }
+  100%    { transform: scaleX(0); }
+}
 
-/* ========================================
-   IMAGE
-======================================== */
+/* Cursor-following light */
+.works-grid-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    320px circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.22),
+    transparent 60%
+  );
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.works-grid-item:hover::after {
+  opacity: 1;
+}
+
+/* ---------- Image ---------- */
 
 .works-grid-item img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  transition:
-    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: grayscale(1) contrast(1.08) brightness(0.92);
+  transform: scale(1.02);
+  transition: filter 0.7s ease,
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .works-grid-item:hover img {
-  transform: scale(1.06);
+  filter: grayscale(0) contrast(1.05) brightness(1);
+  transform: scale(1.08);
 }
 
+/* The wall recedes while one poster is "developed" */
+@media (hover: hover) {
+  .works-grid:has(.works-grid-item:hover) .works-grid-item:not(:hover) {
+    opacity: 0.45;
+    filter: blur(1.5px);
+  }
+}
 
-/* ========================================
-   META OVERLAY
-======================================== */
+/* ---------- Chip + arrow ---------- */
+
+.works-grid-chip {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.works-grid-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  transform: scale(0) rotate(-90deg);
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.4, 1);
+}
+
+.works-grid-item:hover .works-grid-arrow {
+  transform: scale(1) rotate(0);
+}
+
+/* ---------- Meta ---------- */
 
 .works-grid-meta {
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
-  padding: 1.4rem;
-
-  background:
-    linear-gradient(
-      0deg,
-      rgba(23, 20, 20, 0.82),
-      transparent 70%
-    );
-
+  z-index: 3;
+  padding: 1.6rem 1.4rem 1.4rem;
+  background: linear-gradient(0deg, rgba(23, 20, 20, 0.9), transparent);
   color: var(--white);
 }
 
 .works-grid-tag {
-  font-size: 0.7rem;
-
-  letter-spacing: 0.14em;
-
-  text-transform: uppercase;
-
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
   color: #efe6df;
-
-  opacity: 0.8;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s ease;
 }
 
 .works-grid-meta h3 {
-  margin-top: 0.2rem;
-
+  margin: 0.2rem 0 0;
   font-family: "Manrope", sans-serif;
-
-  font-size: 1.3rem;
-
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
   font-weight: 800;
-
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
 }
 
+.works-grid-item:hover .works-grid-tag,
+.works-grid-item:focus-within .works-grid-tag {
+  opacity: 0.9;
+  max-height: 3rem;
+  transform: none;
+}
 
-/* ========================================
-   TABLET
-======================================== */
+/* Red underline draws in beneath the title */
+.works-grid-meta h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: var(--red);
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.works-grid-item:hover .works-grid-meta h3::after {
+  width: 3.5rem;
+}
+
+/* ---------- Tablet ---------- */
 
 @media (max-width: 1100px) {
   .works-grid-item,
   .works-grid-wide,
   .works-grid-narrow {
-    grid-column: span 3;
+    grid-column: span 6;
   }
 }
 
+/* ---------- Touch: no hover, so show everything ---------- */
 
-/* ========================================
-   MOBILE
-======================================== */
+@media (hover: none) {
+  .works-grid-item { cursor: auto; }
+  .works-grid-item img { filter: none; }
+  .works-grid-tag { opacity: 0.9; max-height: 3rem; transform: none; }
+  .works-grid-arrow { transform: none; }
+}
+
+/* ---------- Mobile ---------- */
 
 @media (max-width: 640px) {
-  .works-grid-section {
-    padding: 4.5rem 0;
-  }
+  .works-grid-section { padding: 4.5rem 0; }
 
-  .works-grid {
-    grid-template-columns: 1fr;
-
+  .works-grid-heading {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
   }
+
+  .wg-outline { padding-left: 0.3em; }
+
+  .works-grid { grid-template-columns: 1fr; gap: 1rem; }
 
   .works-grid-item,
   .works-grid-wide,
   .works-grid-narrow {
     grid-column: span 1;
-
-    aspect-ratio: 4 / 3.4;
+    height: auto;
+    aspect-ratio: 4 / 4.2;
   }
 
-  .works-filter-bar {
-    gap: 0.5rem;
+  .works-filter-bar { gap: 0.5rem; margin-bottom: 2rem; }
+  .works-filter-btn { padding: 0.5rem 1rem; font-size: 0.78rem; }
+  .works-grid-meta { padding: 1.1rem; }
+}
 
-    margin-bottom: 2rem;
-  }
+/* ---------- Reduced motion ---------- */
 
-  .works-filter-btn {
-    padding: 0.5rem 1rem;
-
-    font-size: 0.78rem;
-  }
-
-  .works-grid-meta {
-    padding: 1.1rem;
-  }
-
-  .works-grid-meta h3 {
-    font-size: 1.1rem;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .works-grid-item,
+  .works-grid-item::before { animation: none; }
+  .works-grid-item::before { display: none; }
+  .works-grid-item img,
+  .works-grid-arrow,
+  .works-grid-tag,
+  .works-grid-meta h3::after { transition: none; }
 }
