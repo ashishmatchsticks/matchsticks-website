@@ -10,6 +10,15 @@
   overflow: hidden;
 
   background: #171414;
+
+  /* Hide the system cursor — the spotlight is the only pointer cue */
+  cursor: none;
+}
+
+/* Links and everything inside must hide it too (links default to a hand) */
+.hero *,
+.hero a {
+  cursor: none;
 }
 
 /* --------------------------------
@@ -20,6 +29,11 @@
   position: absolute;
   overflow: hidden;
   inset: 0;
+
+  /* Image never receives the pointer, so a global custom cursor
+     that reacts to images / .hero-media (the "View" marker)
+     can no longer trigger here. Mouse events still reach .hero. */
+  pointer-events: none;
 }
 
 .hero-media img {
@@ -29,7 +43,9 @@
   display: block;
   transform: scale(1);
   will-change: transform;
+  pointer-events: none;
 }
+
 /* Dark gradient */
 
 .hero-media::after {
@@ -46,7 +62,7 @@
     );
 }
 
-/* Mouse-following glow */
+/* Mouse-following glow (only visible while hovering) */
 
 .hero-media::before {
   content: "";
@@ -197,6 +213,12 @@
 -------------------------------- */
 
 @media (max-width: 900px) {
+  .hero,
+  .hero *,
+  .hero a {
+    cursor: auto;
+  }
+
   .hero-content {
     padding: 0 6vw 3rem;
   }
@@ -233,12 +255,19 @@
     font-size: 0.82rem;
   }
 
-  /*
-    Disable the expensive mouse glow
-    on touch devices.
-  */
+  /* Disable the mouse glow on touch devices. */
   .hero-media::before {
     display: none;
+  }
+}
+
+/* Touch devices have no cursor to hide */
+
+@media (hover: none) {
+  .hero,
+  .hero *,
+  .hero a {
+    cursor: auto;
   }
 }
 

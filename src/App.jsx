@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
@@ -66,7 +66,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-
+      <SmoothScroll />
       <ScrollToTop />
 
       <Routes>

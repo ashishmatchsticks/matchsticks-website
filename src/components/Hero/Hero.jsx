@@ -11,7 +11,7 @@ function Hero() {
   useEffect(() => {
     const hero = heroRef.current;
 
-    if (!hero) return;
+    if (!hero) return; 
 
     const ctx = gsap.context(() => {
       // Hero entrance animation
