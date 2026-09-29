@@ -17,19 +17,9 @@ function WorksHeader() {
     const lines = header.querySelectorAll(".works-ph-line > span");
 
     // Initial states
-    gsap.set([crumb, tag], {
-      opacity: 0,
-    }); 
-
-    gsap.set(lines, {
-      y: "110%",
-    });
-
-    gsap.set(bigNum, {
-      opacity: 0,
-      scale: 0.94,
-      x: 0,
-    });
+    gsap.set([crumb, tag], { opacity: 0 });
+    gsap.set(lines, { y: "110%" });
+    gsap.set(bigNum, { opacity: 0, scale: 0.94, x: 0 });
 
     // Header entrance animation
     const introTl = gsap.timeline();
@@ -43,22 +33,12 @@ function WorksHeader() {
       })
       .to(
         lines,
-        {
-          y: "0%",
-          duration: 1,
-          stagger: 0.1,
-          ease: "power4.out",
-        },
+        { y: "0%", duration: 1, stagger: 0.1, ease: "power4.out" },
         "-=0.5"
       )
       .to(
         bigNum,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.4,
-          ease: "power2.out",
-        },
+        { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
         "-=0.8"
       );
 
@@ -72,7 +52,12 @@ function WorksHeader() {
       delay: 1.4,
     });
 
-    // Mouse movement
+    // Spotlight only exists while the pointer is inside the header
+    const handleMouseEnter = () => {
+      if (window.innerWidth <= 900) return;
+      header.classList.add("is-spotlit");
+    };
+
     const handleMouseMove = (event) => {
       if (window.innerWidth <= 900) return;
 
@@ -100,6 +85,8 @@ function WorksHeader() {
     };
 
     const handleMouseLeave = () => {
+      header.classList.remove("is-spotlit");
+
       gsap.to(bigNum, {
         x: 0,
         y: 0,
@@ -108,10 +95,12 @@ function WorksHeader() {
       });
     };
 
+    header.addEventListener("mouseenter", handleMouseEnter);
     header.addEventListener("mousemove", handleMouseMove);
     header.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
+      header.removeEventListener("mouseenter", handleMouseEnter);
       header.removeEventListener("mousemove", handleMouseMove);
       header.removeEventListener("mouseleave", handleMouseLeave);
 
@@ -123,10 +112,7 @@ function WorksHeader() {
   }, []);
 
   return (
-    <header
-      ref={headerRef}
-      className="works-page-header"
-    >
+    <header ref={headerRef} className="works-page-header">
       {/* Crop marks */}
       <div className="works-ph-crop works-ph-crop-tl"></div>
       <div className="works-ph-crop works-ph-crop-tr"></div>
@@ -134,16 +120,11 @@ function WorksHeader() {
       <div className="works-ph-crop works-ph-crop-br"></div>
 
       {/* Big number */}
-      <div
-        ref={bigNumRef}
-        className="works-ph-bignum"
-        aria-hidden="true"
-      >
+      <div ref={bigNumRef} className="works-ph-bignum" aria-hidden="true">
         24
       </div>
 
       <div className="works-ph-wrap">
-
         {/* Breadcrumb */}
         <div className="works-ph-crumb">
           <a href="/">Home</a>
@@ -175,7 +156,6 @@ function WorksHeader() {
           Outdoor takeovers, retail rollouts and campaign builds — a look at
           what actually got fabricated, installed and left standing.
         </p>
-
       </div>
     </header>
   );
